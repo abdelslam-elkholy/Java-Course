@@ -12,6 +12,8 @@ public class Challenge {
         displayScore("adam", position3);
         displayScore("Rana", position4);
         displayScore("Hana", position5);
+
+        System.out.print(areEqualByThreeDecimalPlaces(3.7561 , 3.756));
     }
 
     public static int getPosition(int score)
@@ -30,5 +32,11 @@ public class Challenge {
     {
         System.out.println("the position of player " + userName + " is: " + position);
 
+    }
+
+    public static boolean areEqualByThreeDecimalPlaces(double num1 , double num2)
+    {
+        System.out.println((long)(num1*1000) +" *** " +  (long)(num2*1000));
+        return (long)(num1*1000)==(long)(num2*1000);
     }
 }
