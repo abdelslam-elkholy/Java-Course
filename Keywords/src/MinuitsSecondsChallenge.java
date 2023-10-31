@@ -1,6 +1,6 @@
 public class MinuitsSecondsChallenge {
     public static void main(String[] args) {
-    String time = convertTime(33380);
+    String time = convertTime(33000);
     System.out.println(time);
     }
 
