@@ -16,12 +16,8 @@ public class HasSameLastDigit {
         int thirdLast = third % 10;
 
 
-        if(firstLast == secondLast || firstLast == thirdLast || thirdLast == secondLast )
-        {
-            return true;
-        }
+       return (firstLast == secondLast || firstLast == thirdLast || thirdLast == secondLast );
 
-        return false;
     }
 
     public static boolean isValid(int num)
