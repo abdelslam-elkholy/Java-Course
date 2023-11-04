@@ -28,14 +28,39 @@ public class InputConsoleScanner {
         System.out.println("Hi , What's Your Name: ");
         String name = scanner.nextLine();
         System.out.println("Hi " + name +  ", Thanks for taking Course ");
-        System.out.println("What's Your Birthday: ");
-        int birthday = Integer.parseInt(scanner.nextLine());
 
-        int age = currentYear - birthday;
+        int age  = 0;
+        boolean valid = false;
+        do {
+            System.out.println("Your BirthYear should be between " + currentYear + " and " + (currentYear - 125) );
+            System.out.println("What's Your Birthday: ");
+            try {
+               age = isValid( Integer.parseInt(scanner.nextLine()) ,currentYear);
+               valid = age > 0;
+            }catch (NumberFormatException isBadInput)
+            {
+                System.out.println("Age Should be only Numbers");
+            }
+        }while (!valid);
+
+
+
+
 
         return "Your Age is:  "+age +" !";
 
 
+    }
+
+    public static int isValid(int birthday , int currentYear)
+    {
+
+        if(birthday < currentYear -125 || birthday >= currentYear)
+        {
+            return -1;
+        }
+
+        return currentYear - birthday ;
     }
 }
 
