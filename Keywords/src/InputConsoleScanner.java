@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class InputConsoleScanner {
     public static void main(String[] args) {
 
@@ -5,7 +7,7 @@ public class InputConsoleScanner {
             System.out.println(getFromConsole(2023));
 
         } catch (NullPointerException e) {
-
+            System.out.println(getFromScanner(2023));
         }
     }
 
@@ -22,6 +24,17 @@ public class InputConsoleScanner {
     }
     public static String getFromScanner(int currentYear)
     {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Hi , What's Your Name: ");
+        String name = scanner.nextLine();
+        System.out.println("Hi " + name +  ", Thanks for taking Course ");
+        System.out.println("What's Your Birthday: ");
+        int birthday = Integer.parseInt(scanner.nextLine());
+
+        int age = currentYear - birthday;
+
+        return "Your Age is:  "+age +" !";
+
 
     }
 }
