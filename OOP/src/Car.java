@@ -32,6 +32,7 @@ private int doors = 4;
         if(make == null)
         {
             this.make = "Unknown";
+            return;
         }
         String lowercaseMake = make.toLowerCase();
         switch (lowercaseMake)
@@ -40,7 +41,7 @@ private int doors = 4;
             default ->
                 this.make = "Unsupported";
         }
-        this.make = make;
+
     }
 
     public void setColor(String color) {
