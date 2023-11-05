@@ -6,7 +6,7 @@ public class Main {
         car.setMake("hey");
         System.out.println(car.getMake());
 
-        car.setMake();
+        car.setMake(null);
         System.out.println(car.getMake());
 
         car.setMake("Honda");
