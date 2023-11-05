@@ -29,6 +29,12 @@ public class Main {
                 "- " + acc.getPhoneNumber());
 
         acc.deposite(-5);
+        acc.deposite(50);
+        System.out.println(acc.getAccountBalance());
 
+        acc.withdrawl(-5);
+        acc.withdrawl(10000);
+        acc.withdrawl(50);
+        System.out.println(acc.getAccountBalance());
     }
 }

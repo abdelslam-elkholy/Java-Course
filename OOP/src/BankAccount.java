@@ -58,7 +58,7 @@ public class BankAccount {
 
     public void withdrawl(double cash)
     {
-        if(cash > this.accountBalance)
+        if(cash > this.accountBalance || cash < 1)
         {
             System.out.println("Your Balance is less than this amount");
             return;
