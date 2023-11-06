@@ -14,5 +14,9 @@ public class Worker {
         return currentDate - Integer.parseInt(birthDate);
     }
 
+    public void terminate(String endDate)
+    {
+        this.endDate = endDate;
+    }
 
 }
