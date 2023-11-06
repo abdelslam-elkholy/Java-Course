@@ -44,7 +44,7 @@ public class Main {
         System.out.println(cu2.getName() +" "+ cu2.getEmail() +" "+ cu2.getCreditlimit());
 
         Customer cu3 = new Customer("customer3" , "cuwstomer3@customer.com" , 500);
-        System.out.println(cu2.getName() +" "+ cu2.getEmail() +" "+ cu2.getCreditlimit());
+        System.out.println(cu3.getName() +" "+ cu3.getEmail() +" "+ cu3.getCreditlimit());
     }
 
 
