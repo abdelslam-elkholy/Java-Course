@@ -5,6 +5,19 @@ public class BankAccount {
     private String email;
     private String phoneNumber;
 
+    BankAccount()
+    {
+        System.out.println("Default Constructor");
+    }
+
+    BankAccount(String mail , String phone , int accountNumber , String customerName , double accountBalance)
+    {
+        email = mail ;
+        phoneNumber = phone;
+        this.accountNumber = accountNumber;
+        this.customerName = customerName;
+        this.accountBalance = accountBalance;
+    }
     public int getAccountNumber() {
         return accountNumber;
     }
