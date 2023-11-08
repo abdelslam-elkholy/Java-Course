@@ -45,6 +45,7 @@ public class Main {
 
         Customer cu3 = new Customer("customer3" , "cuwstomer3@customer.com" , 500);
         System.out.println(cu3.getName() +" "+ cu3.getEmail() +" "+ cu3.getCreditlimit());
+
     }
 
 
