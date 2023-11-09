@@ -1,6 +1,10 @@
 public class Refregerator {
     private boolean hasWorkToDo;
 
+    public void setHasWorkToDo(boolean hasWorkToDo) {
+        this.hasWorkToDo = hasWorkToDo;
+    }
+
     Refregerator()
     {
         hasWorkToDo = false;

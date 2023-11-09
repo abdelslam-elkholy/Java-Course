@@ -1,6 +1,10 @@
 public class DishWasher {
     private boolean hasWorkToDo;
 
+    public void setHasWorkToDo(boolean hasWorkToDo) {
+        this.hasWorkToDo = hasWorkToDo;
+    }
+
     DishWasher()
     {
         hasWorkToDo = false;
