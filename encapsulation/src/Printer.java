@@ -31,10 +31,10 @@ public class Printer {
 
     public int printPages(int pages)
     {
-        int sheets = duplex ? pages / 2 : pages;
-        sheets = duplex && pages % 2 != 0 ? sheets+1 : sheets;
+        int sheets = duplex ?( pages / 2 ) + (pages % 2): pages;
+
         pagesprinted+=sheets;
-        System.out.println("Number Of Pages printed is : " + sheets +" and the printer is duplix");
+//        System.out.println("Number Of Pages printed is : " + sheets +" and the printer is duplix");
         return sheets;
     }
 
