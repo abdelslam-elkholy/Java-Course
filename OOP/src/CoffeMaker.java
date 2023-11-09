@@ -1,7 +1,7 @@
-public class DishWasher {
+public class CoffeMaker {
     private boolean hasWorkToDo;
 
-    DishWasher()
+    CoffeMaker()
     {
         hasWorkToDo = false;
     }
@@ -11,8 +11,8 @@ public class DishWasher {
         return hasWorkToDo;
     }
 
-    public void doDishes()
+    public void brewCoffee()
     {
-        if (hasWorkToDo ) System.out.println("Washing Dishes.....");
+        if (hasWorkToDo ) System.out.println("Making Coffee .....");
     }
 }
