@@ -17,6 +17,10 @@ public class Refregerator {
 
     public void orderFood()
     {
-        if (hasWorkToDo ) System.out.println("Ordering Food .....");
+        if (hasWorkToDo )
+        {
+            System.out.println("Ordering Food .....");
+            hasWorkToDo = false;
+        }
     }
 }

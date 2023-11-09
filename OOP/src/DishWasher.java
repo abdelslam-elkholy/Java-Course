@@ -17,6 +17,11 @@ public class DishWasher {
 
     public void doDishes()
     {
-        if (hasWorkToDo ) System.out.println("Washing Dishes.....");
+        if (hasWorkToDo )
+        {
+
+            System.out.println("Washing Dishes.....");
+            hasWorkToDo = false;
+        }
     }
 }
