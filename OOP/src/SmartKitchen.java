@@ -4,6 +4,9 @@ public class SmartKitchen {
     private CoffeMaker coffeMaker;
 
     public SmartKitchen() {
+        refregerator = new Refregerator();
+        dishWasher = new DishWasher();
+        coffeMaker = new CoffeMaker();
     }
 
     public void addWater()
