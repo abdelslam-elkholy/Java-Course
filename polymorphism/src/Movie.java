@@ -12,13 +12,13 @@ public class Movie {
     }
     public static Movie getMovie(String type , String name)
     {
-        switch (type.toUpperCase().charAt(0))
+       return switch (type.toUpperCase().charAt(0))
         {
             case 'A' -> new Adventure(name);
             case 'C' -> new Comedy(name);
             case 'S' -> new ScienceFiction(name);
             default -> new Movie(name);
-        }
+        };
     }
 }
 
