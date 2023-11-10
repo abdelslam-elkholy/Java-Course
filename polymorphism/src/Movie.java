@@ -12,7 +12,7 @@ public class Movie {
     }
 }
 
-public class Adventure extends Movie
+ class Adventure extends Movie
 {
     public Adventure(String title) {
         super(title);
@@ -21,5 +21,32 @@ public class Adventure extends Movie
     @Override
     public void watchMovie() {
         super.watchMovie();
+        System.out.printf("..%s\n" . repeat(3) , "First Scene" , "Movie" , "The end ");
+    }
+}
+
+class Comedy extends Movie
+{
+    public Adventure(String title) {
+        super(title);
+    }
+
+    @Override
+    public void watchMovie() {
+        super.watchMovie();
+        System.out.printf("..%s\n" . repeat(3) , "First Scene" , "Movie" , "The end ");
+    }
+}
+
+class ScienceFiction extends Movie
+{
+    public Adventure(String title) {
+        super(title);
+    }
+
+    @Override
+    public void watchMovie() {
+        super.watchMovie();
+        System.out.printf("..%s\n" . repeat(3) , "First Scene" , "Movie" , "The end ");
     }
 }
