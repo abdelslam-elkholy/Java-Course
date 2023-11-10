@@ -31,6 +31,15 @@ public class ArraysMethods {
         int[] arr6 = Arrays.copyOf(arr5 , arr5.length/2);
         System.out.println(Arrays.toString(arr6));
 
+        String[] stringArray = new String[]{"ahmed" , "abdelslam" , "mahmoud" , "radwan"};
+        Arrays.sort(stringArray);
+        System.out.println(Arrays.toString(stringArray));
+        System.out.println(Arrays.binarySearch(stringArray , "radwan"));
+
+        String[] arr7 = Arrays.copyOf(stringArray , stringArray.length);
+        System.out.println(Arrays.equals(arr7 , stringArray));
+
+
     }
 
     private static int[] generateArray(int length)
