@@ -10,5 +10,13 @@ public class RunTimeTest {
         } else if (unkownType instanceof ScienceFiction scy) {
             scy.watchScienceFiction();
         }
+
+        ElectricCar electricCar = new ElectricCar("Tesla X" , 5);
+        electricCar.drive();
+
+        GasCar gasCar = new GasCar("BMW" , 30);
+        gasCar.drive();
     }
+
+
 }
