@@ -10,6 +10,16 @@ public class Movie {
         String instance = this.getClass().getSimpleName();
         System.out.printf("%s is %s Film \n" , title , instance);
     }
+    public static Movie getMovie(String type , String name)
+    {
+        switch (type.toUpperCase().charAt(0))
+        {
+            case 'A' -> new Adventure(name);
+            case 'C' -> new Comedy(name);
+            case 'S' -> new ScienceFiction(name);
+            default -> new Movie(name);
+        }
+    }
 }
 
  class Adventure extends Movie
@@ -27,7 +37,7 @@ public class Movie {
 
 class Comedy extends Movie
 {
-    public Adventure(String title) {
+    public Comedy(String title) {
         super(title);
     }
 
@@ -40,7 +50,7 @@ class Comedy extends Movie
 
 class ScienceFiction extends Movie
 {
-    public Adventure(String title) {
+    public ScienceFiction(String title) {
         super(title);
     }
 
