@@ -5,13 +5,21 @@ import java.util.Scanner;
 public class SortedArray {
     public static void main(String[] args) {
 
+        int length = getLength();
+        int[] array = generateSortedArray(length);
+        int[] sortedArray = sortArray(array);
+
+        for(int i =0; i< sortedArray.length; i++)
+        {
+            System.out.println("Element " + i +" contents " + sortedArray[i]);
+        }
 
     }
 
     public static int[] generateSortedArray(int length)
     {
         Random random = new Random();
-        int[] array = new int[length]
+        int[] array = new int[length];
         for (int i =0; i < length; i++)
         {
             array[i] = random.nextInt(1000);
