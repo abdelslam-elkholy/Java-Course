@@ -9,7 +9,7 @@ public class SortedArray {
         int[] array = generateSortedArray(length);
         int[] sortedArray = sortArray(array);
 
-        for(int i =0; i< sortedArray.length; i++)
+//        for(int i =0; i< sortedArray.length; i++)
         {
             System.out.println("Element " + i +" contents " + sortedArray[i]);
         }
