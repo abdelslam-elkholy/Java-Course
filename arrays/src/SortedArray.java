@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.InputMismatchException;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -9,7 +10,7 @@ public class SortedArray {
         int[] array = generateSortedArray(length);
         int[] sortedArray = sortArray(array);
 
-//        for(int i =0; i< sortedArray.length; i++)
+        for(int i =0; i< sortedArray.length; i++)
         {
             System.out.println("Element " + i +" contents " + sortedArray[i]);
         }
@@ -28,16 +29,22 @@ public class SortedArray {
     }
 
     public static int getLength() {
-        int length;
-        do {
-            Scanner s = new Scanner(System.in);
-            System.out.print("Enter Your Array Length: ");
-            length = s.nextInt();
-        } while (length < 1 || length > 15 );
+        int length = 0;
+        boolean validInput = false;
+
+        while (!validInput) {
+            try {
+                Scanner s = new Scanner(System.in);
+                System.out.print("Enter Your Array Length: ");
+                length = s.nextInt();
+                validInput = true;
+            } catch (InputMismatchException e) {
+                System.out.println("Enter a valid integer.");
+            }
+        }
 
         return length;
     }
-
 
     public static int[] sortArray(int[] arr)
     {
