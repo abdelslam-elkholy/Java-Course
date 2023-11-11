@@ -33,7 +33,7 @@ public class SortedArray {
             Scanner s = new Scanner(System.in);
             System.out.print("Enter Your Array Length: ");
             length = s.nextInt();
-        } while (length < 1 || length > 15);
+        } while (length < 1 || length > 15 );
 
         return length;
     }
