@@ -1,6 +1,5 @@
 import java.util.Arrays;
 import java.util.InputMismatchException;
-import java.util.Random;
 import java.util.Scanner;
 
 public class SortedArray {
@@ -19,11 +18,21 @@ public class SortedArray {
 
     public static int[] generateSortedArray(int length)
     {
-        Random random = new Random();
+        Scanner scanner = new Scanner(System.in);
         int[] array = new int[length];
         for (int i =0; i < length; i++)
         {
-            array[i] = random.nextInt(1000);
+       try {
+           System.out.print("Enter The Element Number " + (i+1) + ": ");
+           array[i] = scanner.nextInt();
+
+       }catch (InputMismatchException e)
+       {
+           System.out.println("Enter Valid Number!");
+           scanner.nextLine();
+           i--;
+       }
+
         }
         return array;
     }
