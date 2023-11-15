@@ -9,6 +9,8 @@ public class MinimumArray {
           int [] array = readIntegers(length);
 
           System.out.println(Arrays.toString(array));
+          int min = findMin(array);
+          System.out.println(min);
     }
 
     public static int getLength()
