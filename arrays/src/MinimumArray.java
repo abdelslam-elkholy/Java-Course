@@ -3,7 +3,10 @@ import java.util.Scanner;
 
 public class MinimumArray {
     public static void main(String[] args) {
+          int length = getLength();
+          int [] array = readIntegers(length);
 
+          System
     }
 
     public static int getLength()
@@ -27,8 +30,22 @@ public class MinimumArray {
     }
     public static int[] readIntegers(int length)
     {
+            int[] array = new int[length];
              Scanner scanner = new Scanner(System.in);
+             for (int i =0; i<length; i++)
+             {
+                 try
+                 {         System.out.print("Enter The Element Number " + (i+1) + "of the array: ");
+                       array[i] =  scanner.nextInt();
+                 }
+                 catch (InputMismatchException e)
+                 {
+                              System.out.println("Invalid input try again ");
+                              i--;
+                 }
+             }
 
+                  return array;
     }
 
 
