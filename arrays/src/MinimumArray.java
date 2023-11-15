@@ -51,7 +51,17 @@ public class MinimumArray {
                   return array;
     }
 
+       public static int findMin(int[] arr)
+       {
+           int min = arr[0];
 
+           for (int i = 1; i < arr.length; i++)
+           {
+               min = Math.min(min , arr[i]);
+           }
+
+           return min;
+       }
 
 }
 
