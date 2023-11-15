@@ -1,12 +1,14 @@
+import java.util.Arrays;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class MinimumArray {
     public static void main(String[] args) {
           int length = getLength();
+
           int [] array = readIntegers(length);
 
-          System
+          System.out.println(Arrays.toString(array));
     }
 
     public static int getLength()
@@ -16,8 +18,8 @@ public class MinimumArray {
         do {
             try {
                  System.out.print("Enter Your Array Length: ");
-                 int num = scanner.nextInt();
-                 System.out.println(num);
+                  length = scanner.nextInt();
+                 System.out.println(length);
                  break;
 
              }catch (InputMismatchException e)
@@ -41,6 +43,7 @@ public class MinimumArray {
                  catch (InputMismatchException e)
                  {
                               System.out.println("Invalid input try again ");
+                              scanner.nextLine();
                               i--;
                  }
              }
