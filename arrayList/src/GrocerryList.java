@@ -13,13 +13,13 @@ public class GrocerryList {
                     0 - To Shut Down
                     1 - To Add Item(S) to List
                     2 - To Remove Items From List
-                    Enter A number For Which Action you want to do: """);
+                    Enter A number For Which Action you want to do:\s""");
 
 
            int choose = Integer.parseInt(scanner.nextLine());
            if (choose ==0) break;
            else if (choose == 1) {
-               System.out.print("Enter Your Items Seperated By Comma: ");
+               System.out.print("Enter Your Items Separated By Comma: ");
                String items = scanner.nextLine();
                String[] itemsArray = items.split(",");
                for (String item : itemsArray)
@@ -34,7 +34,7 @@ public class GrocerryList {
 
 
            } else if (choose == 2) {
-               System.out.print("Enter Your Items Seperated By Comma: ");
+               System.out.print("Enter Your Items Separated By Comma: ");
                String items = scanner.nextLine();
                String[] itemsArray = items.split(",");
                for(String item : itemsArray)
