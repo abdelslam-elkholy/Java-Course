@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 
 public class ArrayListClass {
@@ -39,6 +40,23 @@ public class ArrayListClass {
         stringList.clear();
         System.out.println("Is Empty: " + stringList.isEmpty());
         System.out.println( stringList);
+        stringList.addAll(List.of("li1" , "li2" , "li3" , "li4"));
+        System.out.println( stringList);
+        stringList.addAll(Arrays.asList("li1" , "li2" , "li3" , "li4"));
+        System.out.println( stringList);
+        stringList.sort(Comparator.naturalOrder());
+        System.out.println( stringList);
+        stringList.sort(Comparator.reverseOrder());
+        System.out.println( stringList);
+
+        var arrayListStrings = stringList.toArray(new String[stringList.size()]);
+        System.out.println( Arrays.toString(arrayListStrings));
+        var arrayListTwo = stringList.toArray();
+        System.out.println( Arrays.toString(arrayListTwo));
+
+
+
+
 
     }
     record Grocery(String name , String type , int count)
