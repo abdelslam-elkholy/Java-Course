@@ -21,10 +21,14 @@ public class ArrayListClass {
         groceriesThree.add(0,new Grocery("Rice"));
         groceriesThree.add(1,new Grocery("Pepsi"));
         groceriesThree.set(0,new Grocery("Rice2"));
-
+        groceriesThree.addAll(groceriesTwo);
         System.out.println(groceriesThree);
         System.out.println(groceriesThree.get(1));
 
+        ArrayList<String> stringList = new ArrayList<>(List.of("Tea" , "Coffee" , "Sugar" , "Water" , "Water"));
+        System.out.println( stringList.lastIndexOf("Water"));
+        System.out.println(stringList.indexOf("Water"));
+        System.out.println(stringList.contains("Tea"));
 
     }
     record Grocery(String name , String type , int count)
