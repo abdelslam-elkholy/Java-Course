@@ -4,13 +4,18 @@ import java.util.Scanner;
 
 public class MinimumArray {
     public static void main(String[] args) {
-          int length = getLength();
+//          int length = getLength();
+//
+//          int [] array = readIntegers(length);
+//
+//          System.out.println(Arrays.toString(array));
+//          int min = findMin(array);
+//          System.out.println(min);
+       int[] array =  getInputs();
+        System.out.println(Arrays.toString(array));
+       int min = findMin(array);
+        System.out.println(min);
 
-          int [] array = readIntegers(length);
-
-          System.out.println(Arrays.toString(array));
-          int min = findMin(array);
-          System.out.println(min);
     }
 
     public static int getLength()
@@ -65,5 +70,19 @@ public class MinimumArray {
            return min;
        }
 
+       public static int[] getInputs()
+       {
+           Scanner scanner = new Scanner(System.in);
+           System.out.print("Enter Your Array elements seperated by comma: ");
+           String string = scanner.nextLine();
+           String[] splited = string.split(",");
+           int[] array = new int[splited.length];
+           for(int i =0; i <splited.length; i++)
+           {
+               array[i] = Integer.parseInt(splited[i]);
+           }
+         return array;
+
+       }
 }
 
