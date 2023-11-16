@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.Scanner;
 
 public class GrocerryList {
@@ -28,7 +29,7 @@ public class GrocerryList {
                         arrayList.add(item);
                     }
                }
-
+               arrayList.sort(Comparator.naturalOrder());
                System.out.println(arrayList);
 
 
@@ -40,7 +41,7 @@ public class GrocerryList {
                {
                    arrayList.remove(item);
                }
-
+               arrayList.sort(Comparator.naturalOrder());
                System.out.println(arrayList);
            }
 
