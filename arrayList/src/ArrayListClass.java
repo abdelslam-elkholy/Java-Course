@@ -29,6 +29,16 @@ public class ArrayListClass {
         System.out.println( stringList.lastIndexOf("Water"));
         System.out.println(stringList.indexOf("Water"));
         System.out.println(stringList.contains("Tea"));
+        stringList.addAll(List.of("li1" , "li2" , "li1" , "li1"));
+        System.out.println(stringList);
+        stringList.remove("li1");
+        System.out.println(stringList);
+        stringList.removeAll(List.of("li1"));
+        System.out.println(stringList);
+        System.out.println("Is Empty: " + stringList.isEmpty());
+        stringList.clear();
+        System.out.println("Is Empty: " + stringList.isEmpty());
+        System.out.println( stringList);
 
     }
     record Grocery(String name , String type , int count)
