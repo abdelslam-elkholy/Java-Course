@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class ArrayListClass {
 
@@ -12,6 +13,17 @@ public class ArrayListClass {
         groceryList.add(new Grocery("Cheese" , "Market" , 5));
         System.out.println(groceryList);
 
+        Grocery[] groceriesArray = {new Grocery("coffe") , new Grocery("Milk") , new Grocery("Sugar")};
+        ArrayList<Grocery> groceriesTwo = new ArrayList<>(List.of(groceriesArray));
+        System.out.println(groceriesTwo);
+
+        ArrayList<Grocery> groceriesThree = new ArrayList<>();
+        groceriesThree.add(0,new Grocery("Rice"));
+        groceriesThree.add(1,new Grocery("Pepsi"));
+        groceriesThree.set(0,new Grocery("Rice2"));
+
+        System.out.println(groceriesThree);
+        System.out.println(groceriesThree.get(1));
 
 
     }
@@ -23,6 +35,10 @@ public class ArrayListClass {
             this(name, "Daiary", 1);
         }
 
-
+    @Override
+        public String toString()
+    {
+        return String.format("%d %s in %s" , count , name , type);
+    }
     }
 }
