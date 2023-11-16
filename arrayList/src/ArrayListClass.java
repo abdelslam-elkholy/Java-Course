@@ -8,6 +8,10 @@ public class ArrayListClass {
         System.out.println(Arrays.deepToString(towDimensioalArray));
 
         ArrayList<Grocery> groceryList = new ArrayList<>();
+        groceryList.add(new Grocery("Coffee"));
+        groceryList.add(new Grocery("Cheese" , "Market" , 5));
+        System.out.println(groceryList);
+
 
 
     }
@@ -15,8 +19,8 @@ public class ArrayListClass {
     {
 
 
-        public Grocery(String type, int count) {
-            this(null, "Daiary", 1);
+   Grocery(String name) {
+            this(name, "Daiary", 1);
         }
 
 
