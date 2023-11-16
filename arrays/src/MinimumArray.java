@@ -15,6 +15,8 @@ public class MinimumArray {
         System.out.println(Arrays.toString(array));
        int min = findMin(array);
         System.out.println(min);
+        int[]reversed = reverseArray(array);
+        System.out.println(Arrays.toString(reversed));
 
     }
 
@@ -83,6 +85,16 @@ public class MinimumArray {
            }
          return array;
 
+       }
+
+       private static int[] reverseArray(int[] arr)
+       {
+           int[] reversed = new int[arr.length];
+           for (int i = 0; i<arr.length; i++)
+           {
+               reversed[i] = arr[arr.length-1-i];
+           }
+           return reversed;
        }
 }
 
