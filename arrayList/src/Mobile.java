@@ -18,8 +18,40 @@ public class Mobile {
 
     private int findContact(String name)
     {
+        for(int i = 0; i < myContacts.size(); i++){
+            if (myContacts.get(i).getName().equals(name))
+            {
+                return i;
+            }
 
+        }
+        return -1;
     }
+
+    public boolean addNewContact(Contact contact)
+    {
+        int index = findContact(contact);
+        if(index < 0 )
+        {
+            return false;
+        }
+
+        myContacts.add(contact);
+        return true;
+    }
+
+    public boolean removeContact(Contact contact)
+    {
+       if (findContact(contact) < 0)
+       {
+           return  false;
+       }
+
+       myContacts.remove(contact);
+       return true;
+    }
+
+
 }
 class Contact
 {
