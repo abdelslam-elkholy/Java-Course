@@ -30,14 +30,15 @@ public class Mobile {
 
     public boolean addNewContact(Contact contact)
     {
-        int index = findContact(contact);
+        int index = findContact(contact.getName());
         if(index < 0 )
         {
-            return false;
-        }
+            myContacts.add(contact);
+            return true;
 
-        myContacts.add(contact);
-        return true;
+        }
+        return false;
+
     }
 
     public boolean removeContact(Contact contact)
@@ -61,6 +62,28 @@ public class Mobile {
 
         myContacts.set(index , newCo);
         return true;
+    }
+
+    public void printContacts()
+    {
+        System.out.println("ContactList: ");
+        int size = myContacts.size();
+        for (int i=0;i < size; i++)
+        {
+            Contact contact = myContacts.get(i);
+            System.out.println((i+1)+"-\s\s"+contact.getName() + "\s -> " + contact.getPhoneNum() );
+        }
+    }
+
+    public Contact querycontact(String name)
+    {
+        int index = findContact(name);
+        if(index < 0 )
+        {
+            return null;
+        }
+
+        return myContacts.get(index);
     }
 
 }
