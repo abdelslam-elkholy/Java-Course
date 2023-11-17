@@ -51,6 +51,17 @@ public class Mobile {
        return true;
     }
 
+    public boolean updateContact(Contact old , Contact newCo)
+    {
+        int index = findContact(old);
+        if(index < 0)
+        {
+            return false;
+        }
+
+        myContacts.set(index , newCo);
+        return true;
+    }
 
 }
 class Contact
