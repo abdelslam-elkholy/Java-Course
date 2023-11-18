@@ -7,6 +7,7 @@ public class LinkedListClass {
     var places = new LinkedList<String>();
      places.add("Cairo");
      places.add("Alex");
+     places.add(0,"Al");
      System.out.println(places);
 
      places.addLast("Shebeen");
@@ -21,6 +22,13 @@ public class LinkedListClass {
      places.push("Stack Place Push");
      System.out.println(places);
 
+    places.remove(0);
+    places.remove("Alex");
+    System.out.println(places);
 
+    places.remove();
+    System.out.println( places.remove());
+    places.removeFirst();
+    System.out.println(places);
     }
 }
