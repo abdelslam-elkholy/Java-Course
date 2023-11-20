@@ -26,9 +26,22 @@ public class LinkedListClass {
     places.remove("Alex");
     System.out.println(places);
 
-    places.remove();
-    System.out.println( places.remove());
-    places.removeFirst();
-    System.out.println(places);
+//    places.remove();
+//    System.out.println( places.remove());
+//    places.removeFirst();
+//    System.out.println(places);
+//
+//
+//    places.pop();
+//    System.out.println(places);
+//    places.poll();
+//    System.out.println(places);
+
+
+       System.out.println( places.getFirst());
+       System.out.println( places.getLast());
+       System.out.println( places.element());
+       System.out.println( places.peek());
+       System.out.println( places.peekFirst());
     }
 }
