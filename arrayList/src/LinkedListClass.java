@@ -1,4 +1,5 @@
 import java.util.LinkedList;
+import java.util.ListIterator;
 
 public class LinkedListClass {
     public static void main(String[] args) {
@@ -51,5 +52,20 @@ public class LinkedListClass {
 
         }
         System.out.println("Trip Ended at " +  places.getLast());
+
+        String town = places.getFirst();
+        ListIterator<String> iterator = places.listIterator(1);
+        System.out.println("Trips Starts at " +  town);
+
+        while (iterator.hasNext())
+        {
+            String town2 = iterator.next();
+            System.out.println("--> : "+ town + " to " + town2);
+            town = town2;
+
+        }
+        System.out.println("Trip Ended at " +  places.getLast());
+
     }
+
 }
