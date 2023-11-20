@@ -43,5 +43,13 @@ public class LinkedListClass {
        System.out.println( places.element());
        System.out.println( places.peek());
        System.out.println( places.peekFirst());
+
+        System.out.println("Trips Starts at " +  places.getFirst());
+        for (int i = 1; i < places.size(); i++ )
+        {
+            System.out.println("--> : "+ places.get(i-1) + " to " + places.get(i));
+
+        }
+        System.out.println("Trip Ended at " +  places.getLast());
     }
 }
