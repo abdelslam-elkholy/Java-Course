@@ -20,6 +20,18 @@ class Album
         songs = new ArrayList<>();
 
     }
+
+    private Song findSong(String title)
+    {
+        for(Song song:songs)
+        {
+            if(song.getTitle().equalsIgnoreCase(title))
+            {
+                return song;
+            }
+        }
+        return null;
+    }
 }
 
 class Song
