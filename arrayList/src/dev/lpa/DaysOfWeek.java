@@ -1,5 +1,5 @@
 package dev.lpa;
 
 public enum DaysOfWeek {
-    SUN,MON,TUE,WEN,THU,FRI,SAT
+    SUN,MON,TUE,WED,THU,FRI,SAT
 }
