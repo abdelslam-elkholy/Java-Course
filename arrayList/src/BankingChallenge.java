@@ -2,12 +2,30 @@ import java.util.ArrayList;
 
 public class BankingChallenge {
 
+    public static void main(String[] args) {
+
+        Bank cibBank = new Bank("CIB");
+        Customer cust1 = new Customer("Abdelslam");
+        cust1.addTransaction(500);
+        cust1.addTransaction(400);
+
+        Customer cust2 = new Customer("Ahmed");
+        cust2.addTransaction(-190);
+        cust2.addTransaction(9000);
+
+        cibBank.addNewCustomer(cust1);
+        cibBank.addNewCustomer(cust2);
+        cibBank.addNewCustomer(cust1);
+
+        cibBank.printStatement();
+
+    }
 }
 
 class Customer
 {
-    String name;
-    ArrayList<Double> transactions;
+   private String name;
+    private ArrayList<Double> transactions;
 
     Customer(String name )
     {
@@ -31,8 +49,8 @@ class Customer
 
 class Bank
 {
-    String name;
-    ArrayList<Customer> customers;
+  private   String name;
+  private    ArrayList<Customer> customers;
 
     Bank(String name)
     {
