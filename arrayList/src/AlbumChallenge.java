@@ -32,6 +32,19 @@ class Album
         }
         return null;
     }
+
+    public boolean addSong(String title , double duration)
+    {
+        if(findSong(title) == null)
+        {
+            songs.add(new Song(title , duration));
+            System.out.println("Song Added Successfully!");
+            return true;
+        }
+
+        System.out.println("Song Already Exist!");
+        return false;
+    }
 }
 
 class Song
