@@ -11,4 +11,19 @@ public abstract class Animal {
 
     public abstract void move(String speed);
     public abstract void makeNoise();
+
+    public final String getTypeName()
+    {
+        return getClass().getSimpleName();
+    }
+}
+
+abstract class Mammal extends Animal
+{
+
+    public Mammal(String type, String size, double weight) {
+        super(type, size, weight);
+    }
+
+    public abstract void doMammalThings();
 }

@@ -9,10 +9,10 @@ public class Fish extends Animal{
         public void move(String speed) {
             if (type == "Golden")
             {
-                System.out.println("Swimming Fast");
+                System.out.println(getTypeName() +  " Swimming Fast");
             }
             else {
-                System.out.println("Swimmingg Slow");
+                System.out.println(getTypeName() + "Swimmingg Slow");
             }
         }
 
