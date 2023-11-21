@@ -7,9 +7,10 @@ public class PlacessChallenge {
 
  Trip trip = makeTrip();
   Scanner scanner = new Scanner(System.in);
+  ListIterator<City> iterator = trip.getCities().listIterator();
   while (true)
   {
-   ListIterator<City> iterator = trip.getCities().listIterator();
+
    System.out.println("""
            Available Actions:
            (F))orward 
@@ -24,7 +25,7 @@ public class PlacessChallenge {
 
        if (iterator.hasNext()) {
         System.out.println(iterator.next());
-        iterator.next();
+//        iterator.next();
        } else {
         System.out.println("This Is last Trip");
        }
