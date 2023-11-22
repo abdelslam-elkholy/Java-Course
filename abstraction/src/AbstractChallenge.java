@@ -22,12 +22,13 @@ abstract class ProductForSale
 
     public final void printPricedLine(int quant)
     {
-        System.out.println("Type" + " ".repeat(10) +
-                "Qt " +" ".repeat(3) +
-                "Price");
-        System.out.println(type + " ".repeat(10) +
-                 quant + " ".repeat(3) +
-                "$" + price);
+//        System.out.println("Type" + " ".repeat(10) +
+//                "Qt " +" ".repeat(3) +
+//                "Price");
+//        System.out.println(type + " ".repeat(10) +
+//                 quant + " ".repeat(3) +
+//                "$" + price);
+        System.out.printf("%2d")
     }
 
     public abstract void showDetails();
