@@ -9,4 +9,6 @@ class RankTest {
     void getValueOfKing() {
         assertEquals(10 , Rank.KING.getValue());
     }
+
+
 }
