@@ -1,32 +1,38 @@
 package com.blackjack;
 
 public class Card {
-    private String suit;
-    private String rank;
+    private Suit suit;
+    private Rank rank;
 
-    public Card(String suit, String rank) {
+    public Card(Suit suit, Rank rank) {
         this.suit = suit;
         this.rank = rank;
     }
 
-    public String getSuit() {
+    public Suit getSuit() {
         return suit;
     }
 
-    public void setSuit(String suit) {
+    public void setSuit(Suit suit) {
         this.suit = suit;
     }
 
-    public String getRank() {
+    public Rank getRank() {
         return rank;
     }
 
-    public void setRank(String rank) {
+    public void setRank(Rank rank) {
         this.rank = rank;
     }
 
+    public int getValue()
+    {
+        return rank.getValue();
+    }
     public static void main(String[] args) {
-        Card card  = new Card("Clubs" , "King");
+        Card card  = new Card(Suit.CLUBS , Rank.JACK);
+        Card card2  = new Card(Suit.DIAMONDS , Rank.TEN);
+
   }
 
 }
