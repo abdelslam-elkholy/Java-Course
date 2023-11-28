@@ -42,9 +42,11 @@ public class Card {
     public static void main(String[] args) {
         Card card  = new Card(Suit.CLUBS , Rank.JACK);
         Card card2  = new Card(Suit.DIAMONDS , Rank.TEN);
+        Card card3 = new Card("hearts" , "three");
 
+        System.out.println(card);
         System.out.println(card2);
-        System.out.println(card2);
+        System.out.println(card3);
 
   }
 
