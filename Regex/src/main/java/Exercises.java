@@ -18,6 +18,23 @@ public class Exercises {
 
             }
         }
+
+        for (DaysOfWeek day : DaysOfWeek.values())
+        {
+            char dayOfWeekFirstChar = String.valueOf(day).charAt(0);
+            String dayOfWeek = String.valueOf(day).toLowerCase();
+            if(dayOfWeek.equals("sat") )
+            {
+                System.out.println( dayOfWeek + "urDay");
+            } else if (dayOfWeek.equals("wed")) {
+                System.out.println( dayOfWeek + "nesDay");
+
+            }
+            else {
+                System.out.println(dayOfWeekFirstChar+dayOfWeek.substring(1) + "day");
+
+            }
+        }
     }
 }
 
