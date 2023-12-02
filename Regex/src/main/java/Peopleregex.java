@@ -4,6 +4,6 @@ public class Peopleregex {
               Mohhamed, Mahmoud, 1/10/1993
               Hend, Ahmed, 25/10/1995  
               """;
-    String regex =
+
 
 }
