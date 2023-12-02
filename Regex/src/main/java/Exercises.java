@@ -1,3 +1,5 @@
+import java.util.Random;
+
 public class Exercises {
 
     public static void main(String[] args) {
@@ -34,6 +36,22 @@ public class Exercises {
                 System.out.println(dayOfWeekFirstChar+dayOfWeek.substring(1) + "day");
 
             }
+        }
+        for (DaysOfWeek day : DaysOfWeek.values()) {
+            System.out.println(day.name().charAt(0) + day.name().substring(1).toLowerCase()+"day");
+        }
+        int max = DaysOfWeek.values().length;
+        DaysOfWeek[] days = DaysOfWeek.values();
+        for (int i =0; i < 10; i++)
+        {
+            Random random = new Random();
+            int randome = random.nextInt(max);
+            System.out.println(days[randome]);
+        }
+
+        for (DaysOfWeek day: DaysOfWeek.values())
+        {
+           System.out.println("We Eat "+day.eat + " " + day.name().charAt(0)+day.name().substring(1)+"Day"  );
         }
     }
 }

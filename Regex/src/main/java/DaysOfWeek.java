@@ -1,10 +1,16 @@
 public enum DaysOfWeek {
 
-    SUN,
-    MON,
-    TUES,
-    WED,
-    THURS,
-    FRI,
-    SAT
+    SUN("Pizza"),
+    MON("Rice"),
+    TUES("Salad"),
+    WED("hh"),
+    THURS("sss"),
+    FRI("ssfff"),
+    SAT("ddddddddd");
+
+    String eat;
+    DaysOfWeek(String eat)
+    {
+        this.eat=eat;
+    }
 }
