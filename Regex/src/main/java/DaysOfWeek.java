@@ -2,9 +2,9 @@ public enum DaysOfWeek {
 
     SUN("Pizza"),
     MON("Rice"),
-    TUES("Salad"),
+    TUE("Salad"),
     WED("hh"),
-    THURS("sss"),
+    THU("sss"),
     FRI("ssfff"),
     SAT("ddddddddd");
 

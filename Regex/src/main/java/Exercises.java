@@ -51,7 +51,21 @@ public class Exercises {
 
         for (DaysOfWeek day: DaysOfWeek.values())
         {
-           System.out.println("We Eat "+day.eat + " " + day.name().charAt(0)+day.name().substring(1)+"Day"  );
+           System.out.println("We Eat "+day.eat.toUpperCase().charAt(0)+day.eat.substring(1) + " at " + day.name().charAt(0)+day.name().substring(1).toLowerCase()+"day"  );
+        }
+
+      System.out.println(  DaysOfWeek.valueOf("FRI").eat);
+        String[] week = new String[]{"Saturday" , "Sunday" , "friday"};
+        getMeals(week);
+    }
+
+
+    private static void  getMeals(String[] names)
+    {
+        for (String name : names)
+        {
+            System.out.println( DaysOfWeek.valueOf(name.toUpperCase().substring(0,3)).eat);
+
         }
     }
 }
