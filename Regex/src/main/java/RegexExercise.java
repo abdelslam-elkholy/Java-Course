@@ -3,11 +3,12 @@ import java.util.regex.Pattern;
 
 public class RegexExercise {
     public static void main(String[] args) {
-        String regex = "(?<name>[DbL]ark)";
+        String regex = "(?<name>([DbL]|st)ark)";
+
         String st1 = "Dark";
         String st5 = "bark";
         String st2 = "Lark";
-        String st3 = "hark";
+        String st3 = "stark";
         String st4 = "jark";
 
         Pattern pat = Pattern.compile(regex);
@@ -17,6 +18,23 @@ public class RegexExercise {
         Matcher mat4 = pat.matcher(st4);
         Matcher mat5 = pat.matcher(st5);
 
+
+
+        String regex2 = "A([bg]ra)cada\\1";
+        String st6 = "Abracadabra";
+        String st7 = "Agracadagra";
+        String st8 = "Abracadagra";
+        String st9 = "Agracadabra";
+
+        Pattern pat2 = Pattern.compile(regex2);
+        Matcher mat6 = pat.matcher(st6);
+        if (mat6.matches())
+        {
+            System.out.println(mat6.group());
+        }
+        else {
+            System.out.println("Abracadabra regex doesnt match");
+        }
         if(mat1.matches())
         {
             System.out.println(mat1.group("name"));
