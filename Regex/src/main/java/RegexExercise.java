@@ -27,7 +27,16 @@ public class RegexExercise {
         String st9 = "Agracadabra";
 
         Pattern pat2 = Pattern.compile(regex2);
-        Matcher mat6 = pat.matcher(st6);
+        Matcher mat6 = pat2.matcher(st9);
+
+
+        String mailRegex = "\\w+\\.\\w+@[a-zA-Z]{3,15}\\.(com|net)";
+        String st10 ="abd.edj@ggdd.com";
+
+//        Pattern mailPat = Pattern.compile(mailRegex);
+//        Matcher mailMat = mailPat.matcher(st10);
+        System.out.println(st10.matches(mailRegex));
+
         if (mat6.matches())
         {
             System.out.println(mat6.group());
