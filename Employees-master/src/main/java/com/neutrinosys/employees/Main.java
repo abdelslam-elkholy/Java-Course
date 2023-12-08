@@ -93,11 +93,12 @@ public class Main {
 //            }
 //            return 0;
 //        });
-
+//        Collections.shuffle(emps);
         for (IEmployee worker : emps) {
             System.out.println(worker.toString());
             totalSalaries+= worker.getSalary();
         }
+
 //        NumberFormat currencyInstance = NumberFormat.getCurrencyInstance();
 //        System.out.printf("The total payout should be %s%n", currencyInstance.format(totalSalaries));
 //        System.out.println(employees.size());
