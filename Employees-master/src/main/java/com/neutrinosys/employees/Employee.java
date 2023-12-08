@@ -106,9 +106,10 @@ public abstract class Employee implements IEmployee {
     }
 
     @Override
-    public int compareTo(IEmployee o) {
-        Employee other = (Employee) o;
-        return this.lastName.compareTo(other.lastName);
+    public int compareTo(IEmployee iEmp) {
+        Employee emp = (Employee) iEmp;
+
+        return this.lastName.compareTo(emp.lastName);
     }
 
     public record Jumper(String firstName, String lastName){}
