@@ -76,7 +76,7 @@ public class Main {
         {
             Employee emp = (Employee) employee;
 
-           if (Objects.equals(emp.firstName, firstName)) return emp.getSalary();
+           if (emp.firstName.equals(firstName)) return emp.getSalary();
 
 
         }
