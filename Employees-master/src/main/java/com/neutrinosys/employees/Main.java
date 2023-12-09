@@ -40,10 +40,13 @@ public class Main {
         int totalSalaries = 0;
         IEmployee employee = null;
         empolyees = new TreeSet<>((e1 , e2)->Integer.compare(e1.getSalary(),e2.getSalary()));
-
+        Map<String , Integer> salaryMap = new HashMap<>();
         while (peopleMat.find()) {
             employee = Employee.createEmployee(peopleMat.group());
+           Employee emp = (Employee) employee;
             empolyees.add(employee);
+            salaryMap.put(emp.firstName , emp.getSalary());
+
         }
 
 
