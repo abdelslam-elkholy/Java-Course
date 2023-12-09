@@ -8,6 +8,7 @@ public class Main {
 
 
     private static Set<IEmployee> empolyees;
+    private static Map<String, Employee> empMap;
 
     public static void main(String[] args) {
         String peopleText = """
@@ -40,12 +41,12 @@ public class Main {
         int totalSalaries = 0;
         IEmployee employee = null;
         empolyees = new TreeSet<>((e1 , e2)->Integer.compare(e1.getSalary(),e2.getSalary()));
-        Map<String , Integer> salaryMap = new HashMap<>();
+        empMap = new TreeMap<String, Employee>();
         while (peopleMat.find()) {
             employee = Employee.createEmployee(peopleMat.group());
-           Employee emp = (Employee) employee;
+            Employee emp = (Employee) employee;
             empolyees.add(employee);
-            salaryMap.put(emp.firstName , emp.getSalary());
+            empMap.put(emp.firstName , emp);
 
         }
 
@@ -57,6 +58,8 @@ public class Main {
         NumberFormat currencyInstance = NumberFormat.getCurrencyInstance();
         System.out.printf("The total payout should be %s%n" , currencyInstance.format(totalSalaries));
         System.out.println(empolyees.size());
+        System.out.println(empMap.values());
+
     }
 
 
@@ -75,14 +78,6 @@ public class Main {
 
 
     public int getSalary(String firstName) {
-        for (IEmployee employee: empolyees)
-        {
-            Employee emp = (Employee) employee;
-
-           if (emp.firstName.equals(firstName)) return emp.getSalary();
-
-
-        }
-        return 0;
+        return empMap.get(firstName).getSalary();
     }
 }
