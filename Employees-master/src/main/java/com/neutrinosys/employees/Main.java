@@ -6,8 +6,8 @@ import java.util.regex.Matcher;
 
 public class Main {
 
-    private static Set<IEmployee> employees;
-    private static Map<String, Integer> salaryMap;
+
+    private static Set<IEmployee> empolyees;
 
     public static void main(String[] args) {
         String peopleText = """
@@ -39,7 +39,7 @@ public class Main {
 
         int totalSalaries = 0;
         IEmployee employee = null;
-        Set<IEmployee> empolyees = new TreeSet<>((e1 , e2)->Integer.compare(e1.getSalary(),e2.getSalary()));
+        empolyees = new TreeSet<>((e1 , e2)->Integer.compare(e1.getSalary(),e2.getSalary()));
 
         while (peopleMat.find()) {
             employee = Employee.createEmployee(peopleMat.group());
@@ -70,8 +70,16 @@ public class Main {
         }
     }
 
-    public int getSalary(String firstName) {
-        return salaryMap.getOrDefault(firstName, -1);
-    }
 
+    public int getSalary(String firstName) {
+        for (IEmployee employee: empolyees)
+        {
+            Employee emp = (Employee) employee;
+
+           if (Objects.equals(emp.firstName, firstName)) return emp.getSalary();
+
+
+        }
+        return 0;
+    }
 }
