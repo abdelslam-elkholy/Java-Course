@@ -1,5 +1,6 @@
 package com.neutrinosys.employees;
 
+import java.text.NumberFormat;
 import java.util.*;
 import java.util.regex.Matcher;
 
@@ -38,7 +39,7 @@ public class Main {
 
         int totalSalaries = 0;
         IEmployee employee = null;
-        List<IEmployee> empolyees = new ArrayList<>(16);
+        Set<IEmployee> empolyees = new HashSet<>();
 
         while (peopleMat.find()) {
             employee = Employee.createEmployee(peopleMat.group());
@@ -50,9 +51,9 @@ public class Main {
             System.out.println(worker.toString());
             totalSalaries+= worker.getSalary();
         }
-
-
-
+        NumberFormat currencyInstance = NumberFormat.getCurrencyInstance();
+        System.out.printf("The total payout should be %s%n" , currencyInstance.format(totalSalaries));
+        System.out.println(empolyees.size());
     }
 
 
