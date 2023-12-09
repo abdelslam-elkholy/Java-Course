@@ -60,6 +60,12 @@ public class Main {
         System.out.println(empolyees.size());
         System.out.println(salaryMap.values());
         System.out.println(salaryMap.keySet());
+        System.out.println(salaryMap.entrySet());
+
+        for (Map.Entry<String , Integer> entry:salaryMap.entrySet())
+        {
+            System.out.printf("Key= %s , Value = %s%n" , entry.getKey() , entry.getValue());
+        }
 
     }
 
