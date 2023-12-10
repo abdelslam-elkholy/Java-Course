@@ -4,8 +4,8 @@ public class ExerciseOne {
     public static void main(String[] args) {
 
 //        List<Car> cars = new ArrayList<>();
-        Set<Car> cars = new LinkedHashSet<>();
-        List<String> names = new ArrayList<>(List.of("Ahmed" , "Mohammed" , "Mahmoud"));
+        Set<Car> cars = new HashSet<>();
+
         Map<String , Car> table = new HashMap<>();
 
 
@@ -15,9 +15,9 @@ public class ExerciseOne {
         cars.add(new Car("Toyota" , "Corolla" , Color.RED));
 
         table.putIfAbsent("Ahmed",new Car("Toyota" , "Corolla" , Color.BLUE));
-        table.putIfAbsent("Mohammed" , new Car("Toyota" , "Corolla" , Color.RED));
-        table.putIfAbsent("Abdelslam" , new Car("Toyota" , "Corolla" , Color.BLACK));
-        table.putIfAbsent("Adam",new Car("Toyota" , "Corolla" , Color.BLACK));
+        table.putIfAbsent("Mohammed" , new Car("Toyota" , "Yaris" , Color.RED));
+        table.putIfAbsent("Abdelslam" , new Car("Toyota" , "Fortune" , Color.BLACK));
+        table.putIfAbsent("Ahmed",new Car("Toyota" , "Fortune" , Color.BLACK));
 
 
 
@@ -26,7 +26,10 @@ public class ExerciseOne {
             System.out.println(car);
 
         }
-        System.out.println(table);
+        for (Map.Entry ent: table.entrySet())
+        {
+            System.out.printf("%s is Owner of %s%n" , ent.getKey() , ent.getValue());
+        }
     }
 }
 
@@ -56,6 +59,20 @@ class Car  {
 ////        return model.compareTo(car.model);
 //        return 0;
 //    }
+
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Car car = (Car) o;
+        return Objects.equals(brand, car.brand) && Objects.equals(model, car.model) && color == car.color;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(brand, model, color);
+    }
 }
 
 enum Color {
