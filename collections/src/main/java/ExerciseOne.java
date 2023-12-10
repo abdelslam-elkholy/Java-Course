@@ -3,15 +3,20 @@ import java.util.*;
 public class ExerciseOne {
     public static void main(String[] args) {
 
-//        List<Car> cars = new ArrayList<>();
-        Set<Car> cars = new HashSet<>();
+        List<Car> cars = new ArrayList<>();
+//        Set<Car> cars = new HashSet<>();
 
         Map<String , Car> table = new HashMap<>();
 
 
+//        cars.add(new Car("Toyota" , "Corolla" , Color.BLACK));
+//        cars.add(new Car("Toyota" , "Corolla" , Color.BLACK));
+//        cars.add(new Car("Toyota" , "Corolla" , Color.BLUE));
+//        cars.add(new Car("Toyota" , "Corolla" , Color.RED));
+
         cars.add(new Car("Toyota" , "Corolla" , Color.BLACK));
-        cars.add(new Car("Toyota" , "Corolla" , Color.BLACK));
-        cars.add(new Car("Toyota" , "Corolla" , Color.BLUE));
+        cars.add(new Car("Toyota" , "Yaris" , Color.BLACK));
+        cars.add(new Car("Toyota" , "Fortune", Color.BLUE));
         cars.add(new Car("Toyota" , "Corolla" , Color.RED));
 
         table.putIfAbsent("Ahmed",new Car("Toyota" , "Corolla" , Color.BLUE));
@@ -19,6 +24,8 @@ public class ExerciseOne {
         table.putIfAbsent("Abdelslam" , new Car("Toyota" , "Fortune" , Color.BLACK));
         table.putIfAbsent("Ahmed",new Car("Toyota" , "Fortune" , Color.BLACK));
 
+
+        Collections.sort(cars);
 
 
         for (Car car: cars)
@@ -53,12 +60,6 @@ class Car  {
         return model;
     }
 
-//    @Override
-//    public int compareTo(Object o) {
-////        Car car = (Car) o;
-////        return model.compareTo(car.model);
-//        return 0;
-//    }
 
 
     @Override
@@ -73,6 +74,11 @@ class Car  {
     public int hashCode() {
         return Objects.hash(brand, model, color);
     }
+
+//    @Override
+//    public int compareTo(Car car) {
+//        return model.compareTo(car.model);
+//    }
 }
 
 enum Color {
