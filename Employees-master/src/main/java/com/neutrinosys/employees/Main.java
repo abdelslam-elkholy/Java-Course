@@ -46,7 +46,7 @@ public class Main {
             employee = Employee.createEmployee(peopleMat.group());
             Employee emp = (Employee) employee;
             empolyees.add(employee);
-            salaryMap.put(emp.firstName , emp.getSalary());
+            salaryMap.putIfAbsent(emp.firstName , emp.getSalary());
 
         }
 
@@ -85,6 +85,6 @@ public class Main {
 
 
     public int getSalary(String firstName) {
-        return salaryMap.get(firstName);
+        return salaryMap.getOrDefault(firstName , -1);
     }
 }
