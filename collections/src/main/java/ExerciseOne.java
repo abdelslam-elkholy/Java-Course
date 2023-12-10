@@ -1,12 +1,17 @@
 import java.util.*;
 
 public class ExerciseOne {
+
+    private static Map<String, Car> models;
+    private static Map<String, Car> table;
+
     public static void main(String[] args) {
 
         List<Car> cars = new ArrayList<>();
 //        Set<Car> cars = new HashSet<>();
 
-        Map<String , Car> table = new HashMap<>();
+        table = new HashMap<>();
+        models = new HashMap<>();
 
 
 //        cars.add(new Car("Toyota" , "Corolla" , Color.BLACK));
@@ -25,22 +30,33 @@ public class ExerciseOne {
         table.putIfAbsent("Ahmed",new Car("Toyota" , "Fortune" , Color.BLACK));
 
 
+
         Collections.sort(cars);
+        Collections.reverse(cars);
+//        Collections.sort(cars , Comparator.comparing(Car::getModel));
 
 
         for (Car car: cars)
         {
+            models.putIfAbsent(car.getModel(), car);
             System.out.println(car);
 
         }
+
+
         for (Map.Entry ent: table.entrySet())
         {
             System.out.printf("%s is Owner of %s%n" , ent.getKey() , ent.getValue());
         }
     }
+
+//    private static void deleteCar(String name)
+//    {
+//        table.remove()
+//    }
 }
 
-class Car  {
+class Car implements Comparable<Car> {
    private String brand;
     private String model;
     private Color color;
@@ -75,10 +91,10 @@ class Car  {
         return Objects.hash(brand, model, color);
     }
 
-//    @Override
-//    public int compareTo(Car car) {
-//        return model.compareTo(car.model);
-//    }
+    @Override
+    public int compareTo(Car car) {
+        return model.compareTo(car.model);
+    }
 }
 
 enum Color {
