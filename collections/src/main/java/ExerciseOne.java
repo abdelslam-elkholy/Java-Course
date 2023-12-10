@@ -14,12 +14,12 @@ public class ExerciseOne {
         cars.add(new Car("Toyota" , "Corolla" , Color.BLUE));
         cars.add(new Car("Toyota" , "Corolla" , Color.RED));
 
-        int i =0;
-        for (Car car: cars)
-        {
-            table.putIfAbsent(names.get(i) , car);
-            i++;
-        }
+        table.putIfAbsent("Ahmed",new Car("Toyota" , "Corolla" , Color.BLUE));
+        table.putIfAbsent("Mohammed" , new Car("Toyota" , "Corolla" , Color.RED));
+        table.putIfAbsent("Abdelslam" , new Car("Toyota" , "Corolla" , Color.BLACK));
+        table.putIfAbsent("Adam",new Car("Toyota" , "Corolla" , Color.BLACK));
+
+
 
         for (Car car: cars)
         {
@@ -30,11 +30,32 @@ public class ExerciseOne {
     }
 }
 
-record Car(  String brand, String model, Color color) {
+class Car  {
+   private String brand;
+    private String model;
+    private Color color;
+
+    public Car(String brand, String model, Color color) {
+        this.brand = brand;
+        this.model = model;
+        this.color = color;
+    }
+
     @Override
     public String toString() {
         return "Brand new " + color.toString().charAt(0)+color.toString().substring(1).toLowerCase()+ " " +brand+" "+ model ;
     }
+
+    public String getModel() {
+        return model;
+    }
+
+//    @Override
+//    public int compareTo(Object o) {
+////        Car car = (Car) o;
+////        return model.compareTo(car.model);
+//        return 0;
+//    }
 }
 
 enum Color {
