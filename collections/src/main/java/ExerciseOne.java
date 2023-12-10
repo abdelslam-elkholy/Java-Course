@@ -1,10 +1,12 @@
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 public class ExerciseOne {
     public static void main(String[] args) {
 
-        List<Car> cars = new ArrayList<>();
+//        List<Car> cars = new ArrayList<>();
+        Set<Car> cars = new HashSet<>();
+        cars.add(new Car("Toyota" , "Corolla" , Color.BLACK));
         cars.add(new Car("Toyota" , "Corolla" , Color.BLACK));
         cars.add(new Car("Toyota" , "Corolla" , Color.BLUE));
         cars.add(new Car("Toyota" , "Corolla" , Color.RED));
