@@ -1,6 +1,7 @@
 package com.neutrinosys.employees;
 
 
+import java.util.List;
 
 public class StreamsStuff {
     public static void main(String[] args) {
@@ -38,8 +39,13 @@ public class StreamsStuff {
                 .forEach(System.out::println);
 
 
+        List<String> nums = List.of("One" , "Two" , "Three" , "Four");
 
+        nums
+            .stream()
+            .forEach(System.out::println);
     }
+
 
 }
 
