@@ -1,7 +1,11 @@
 package com.neutrinosys.employees;
 
 
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
+import java.util.Set;
+import java.util.stream.Stream;
 
 public class StreamsStuff {
     public static void main(String[] args) {
@@ -39,11 +43,16 @@ public class StreamsStuff {
                 .forEach(System.out::println);
 
 
-        List<String> nums = List.of("One" , "Two" , "Three" , "Four");
+//        Collection<String> nums = Set.of("One" , "Two" , "Three" , "Four");
+//
+//        nums
+//            .stream()
+//            .map(String::hashCode)
+//            .forEach(System.out::println);
 
-        nums
-            .stream()
-            .forEach(System.out::println);
+       Stream.of("One" , "Two" , "Three" , "Four")
+           .map(String::hashCode)
+           .forEach(System.out::println);
     }
 
 
