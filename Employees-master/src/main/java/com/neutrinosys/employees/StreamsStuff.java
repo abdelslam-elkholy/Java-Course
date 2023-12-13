@@ -7,6 +7,8 @@ import java.nio.file.Path;
 import java.util.*;
 import java.util.stream.Stream;
 
+import static java.util.Comparator.comparing;
+
 public class StreamsStuff {
     public static void main(String[] args) {
         String peopleText = """
@@ -38,7 +40,7 @@ public class StreamsStuff {
                 .lines()
                 .map(Employee::createEmployee)
 //                .map(e->(Employee)e)
-                .sorted(Comparator.comparing(IEmployee::getSalary))
+                .sorted(comparing(IEmployee::getSalary))
 //                .mapToInt(s -> s.getSalary())
                 .mapToInt(StreamsStuff::showEmpAndGetSallary)
                 .sum();
