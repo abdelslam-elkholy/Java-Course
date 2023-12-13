@@ -41,12 +41,14 @@ public class StreamsStuff {
         int total;
         int i = peopleText
                 .lines()
+                .filter(((Predicate<String>) s -> s.contains("Programmerzzzzz")).negate())
                 .map(Employee::createEmployee)
+
                 .distinct()
 //                .collect(Collectors.toSet()).stream()
                 .map(e->(Employee)e)
-                .filter(not(e->e.getLastName().equals("N/A")))
-                .filter(not(e->e instanceof Programmer))
+//                .filter(not(e->e.getLastName().equals("N/A")))
+//                .filter(not(e->e instanceof Programmer))
                 .sorted(comparing(Employee::getLastName)
                     .thenComparing(Employee::getSalary)
                     .thenComparing(Employee::getFirstName))
