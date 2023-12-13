@@ -39,9 +39,10 @@ public class StreamsStuff {
             Rubble, Betty, 4/4/1915, CEO, {avgStockPrice=300}
             """;
         int total;
+        Predicate<String> stringPredicate = ((Predicate<String>) s -> s.contains("Programmerzzzzz"));
         int i = peopleText
                 .lines()
-                .filter(((Predicate<String>) s -> s.contains("Programmerzzzzz")).negate())
+                .filter(stringPredicate.negate())
                 .map(Employee::createEmployee)
 
                 .distinct()
