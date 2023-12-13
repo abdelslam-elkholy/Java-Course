@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.*;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import static java.util.Comparator.comparing;
@@ -39,8 +40,12 @@ public class StreamsStuff {
         int i = peopleText
                 .lines()
                 .map(Employee::createEmployee)
+                .distinct()
+//                .collect(Collectors.toSet()).stream()
                 .map(e->(Employee)e)
-                .sorted(comparing(Employee::getSalary).thenComparing(Employee::getFirstName))
+                .sorted(comparing(Employee::getLastName)
+                    .thenComparing(Employee::getSalary)
+                    .thenComparing(Employee::getFirstName))
 //                .mapToInt(s -> s.getSalary())
                 .mapToInt(StreamsStuff::showEmpAndGetSallary)
                 .sum();
