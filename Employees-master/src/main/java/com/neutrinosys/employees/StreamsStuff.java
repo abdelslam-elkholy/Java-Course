@@ -39,8 +39,8 @@ public class StreamsStuff {
         int i = peopleText
                 .lines()
                 .map(Employee::createEmployee)
-//                .map(e->(Employee)e)
-                .sorted(comparing(IEmployee::getSalary))
+                .map(e->(Employee)e)
+                .sorted(comparing(Employee::getSalary).thenComparing(Employee::getFirstName))
 //                .mapToInt(s -> s.getSalary())
                 .mapToInt(StreamsStuff::showEmpAndGetSallary)
                 .sum();
