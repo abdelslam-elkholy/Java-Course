@@ -5,10 +5,12 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.*;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import static java.util.Comparator.comparing;
+import static java.util.function.Predicate.not;
 
 public class StreamsStuff {
     public static void main(String[] args) {
@@ -43,6 +45,8 @@ public class StreamsStuff {
                 .distinct()
 //                .collect(Collectors.toSet()).stream()
                 .map(e->(Employee)e)
+                .filter(not(e->e.getLastName().equals("N/A")))
+                .filter(not(e->e instanceof Programmer))
                 .sorted(comparing(Employee::getLastName)
                     .thenComparing(Employee::getSalary)
                     .thenComparing(Employee::getFirstName))
