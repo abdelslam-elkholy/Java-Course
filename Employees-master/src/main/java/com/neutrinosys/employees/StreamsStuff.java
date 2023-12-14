@@ -38,26 +38,26 @@ public class StreamsStuff {
             Flinstone5, Wilma5, 3/3/1910, Analyst, {projectCount=9}
             Rubble, Betty, 4/4/1915, CEO, {avgStockPrice=300}
             """;
-        int total;
-        Predicate<String> stringPredicate = ((Predicate<String>) s -> s.contains("Programmerzzzzz"));
-        int i = peopleText
-                .lines()
-                .filter(stringPredicate.negate())
-                .map(Employee::createEmployee)
-
-                .distinct()
-//                .collect(Collectors.toSet()).stream()
-                .map(e->(Employee)e)
-//                .filter(not(e->e.getLastName().equals("N/A")))
-//                .filter(not(e->e instanceof Programmer))
-                .sorted(comparing(Employee::getLastName)
-                    .thenComparing(Employee::getSalary)
-                    .thenComparing(Employee::getFirstName))
-//                .mapToInt(s -> s.getSalary())
-                .mapToInt(StreamsStuff::showEmpAndGetSallary)
-                .sum();
-
-        System.out.println(i);
+//        int total;
+//        Predicate<String> stringPredicate = ((Predicate<String>) s -> s.contains("Programmerzzzzz"));
+//        int i = peopleText
+//                .lines()
+//                .filter(stringPredicate.negate())
+//                .map(Employee::createEmployee)
+//
+//                .distinct()
+////                .collect(Collectors.toSet()).stream()
+//                .map(e->(Employee)e)
+////                .filter(not(e->e.getLastName().equals("N/A")))
+////                .filter(not(e->e instanceof Programmer))
+//                .sorted(comparing(Employee::getLastName)
+//                    .thenComparing(Employee::getSalary)
+//                    .thenComparing(Employee::getFirstName))
+////                .mapToInt(s -> s.getSalary())
+//                .mapToInt(StreamsStuff::showEmpAndGetSallary)
+//                .sum();
+//
+//        System.out.println(i);
 
 //        peopleText.lines()
 //                .map(s -> Employee.createEmployee(s))
@@ -83,6 +83,15 @@ public class StreamsStuff {
 //        } catch (IOException e) {
 //            throw new RuntimeException(e);
 //        }
+
+        peopleText
+                .lines()
+                .map(Employee::createEmployee)
+                .map(e->(Employee)e)
+                .map(Employee::getFirstName)
+                .map(firstName->firstName.split(""))
+                .map(Arrays::stream)
+                .
     }
 
     public static int showEmpAndGetSallary(IEmployee e)
