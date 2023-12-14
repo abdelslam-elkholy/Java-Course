@@ -90,8 +90,10 @@ public class StreamsStuff {
                 .map(e->(Employee)e)
                 .map(Employee::getFirstName)
                 .map(firstName->firstName.split(""))
-                .map(Arrays::stream)
-                .
+                .flatMap(Arrays::stream)
+                .map(String::toLowerCase)
+                .distinct()
+                .forEach(System.out::print);
     }
 
     public static int showEmpAndGetSallary(IEmployee e)
