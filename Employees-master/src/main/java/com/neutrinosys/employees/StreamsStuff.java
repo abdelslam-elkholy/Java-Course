@@ -84,16 +84,16 @@ public class StreamsStuff {
 //            throw new RuntimeException(e);
 //        }
 
-        peopleText
-                .lines()
-                .map(Employee::createEmployee)
-                .map(e->(Employee)e)
-                .map(Employee::getFirstName)
-                .map(firstName->firstName.split(""))
-                .flatMap(Arrays::stream)
-                .map(String::toLowerCase)
-                .distinct()
-                .forEach(System.out::print);
+//        peopleText
+//                .lines()
+//                .map(Employee::createEmployee)
+//                .map(e->(Employee)e)
+//                .map(Employee::getFirstName)
+//                .map(firstName->firstName.split(""))
+//                .flatMap(Arrays::stream)
+//                .map(String::toLowerCase)
+//                .distinct()
+//                .forEach(System.out::print);
     }
 
     public static int showEmpAndGetSallary(IEmployee e)
