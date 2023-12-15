@@ -39,25 +39,30 @@ public class StreamsStuff {
             Rubble, Betty, 4/4/1915, CEO, {avgStockPrice=300}
             """;
 //        int total;
-//        Predicate<String> stringPredicate = ((Predicate<String>) s -> s.contains("Programmerzzzzz"));
-//        int i = peopleText
-//                .lines()
-//                .filter(stringPredicate.negate())
-//                .map(Employee::createEmployee)
+        Predicate<String> stringPredicate = ((Predicate<String>) s -> s.contains("Programmerzzzzz"));
+        OptionalInt i = peopleText
+                .lines()
+                .filter(stringPredicate.negate())
+                .map(Employee::createEmployee)
+
+                .distinct()
+//                .collect(Collectors.toSet()).stream()
+                .map(e->(Employee)e)
+//                .filter(not(e->e.getLastName().equals("N/A")))
+//                .filter(not(e->e instanceof Programmer))
+                .sorted(comparing(Employee::getLastName)
+                    .thenComparing(Employee::getSalary)
+                    .thenComparing(Employee::getFirstName))
+//                .mapToInt(s -> s.getSalary())
+                .skip(5)
+                .mapToInt(StreamsStuff::showEmpAndGetSallary)
+//                .count();
+//                .sum()
+//                .reduce(1500000000,(a , b) -> a< b ? a:b);
+                .reduce((a , b) -> a> b ? a:b);
+
 //
-//                .distinct()
-////                .collect(Collectors.toSet()).stream()
-//                .map(e->(Employee)e)
-////                .filter(not(e->e.getLastName().equals("N/A")))
-////                .filter(not(e->e instanceof Programmer))
-//                .sorted(comparing(Employee::getLastName)
-//                    .thenComparing(Employee::getSalary)
-//                    .thenComparing(Employee::getFirstName))
-////                .mapToInt(s -> s.getSalary())
-//                .mapToInt(StreamsStuff::showEmpAndGetSallary)
-//                .sum();
-//
-//        System.out.println(i);
+        System.out.println(i.orElse(-1));
 
 //        peopleText.lines()
 //                .map(s -> Employee.createEmployee(s))
