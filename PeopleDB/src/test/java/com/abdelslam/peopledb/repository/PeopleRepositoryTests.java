@@ -1,6 +1,7 @@
 package com.abdelslam.peopledb.repository;
 
 import com.abdelslam.peopledb.model.Person;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -18,7 +19,16 @@ public class PeopleRepositoryTests {
 
     @BeforeEach
     void setUp() throws SQLException {
-        connection = DriverManager.getConnection("/home/abdelslam/Desktop/Courses/Java/people-test");
+        connection = DriverManager.getConnection("jdbc:h2:/home/abdelslam/Desktop/Courses/Java/people-test");
+    }
+
+    @AfterEach
+    void tearDown() throws SQLException {
+        if(connection != null)
+        {
+            connection.close();
+
+        }
     }
 
     @Test

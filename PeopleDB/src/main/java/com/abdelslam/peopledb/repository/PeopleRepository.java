@@ -12,14 +12,14 @@ public class PeopleRepository {
     }
 
     public Person save(Person person) {
-        String sql = String.format("Insert in people (FIRST_NAME , LAST_NAME, DOB) VALUES (? ,? ,?)",person.getFirstName() , person.getLastName() , person.getDob());
+        String sql = String.format("Insert INTO people (FIRST_NAME , LAST_NAME, DOB) VALUES (? ,? ,?)",person.getFirstName() , person.getLastName() , person.getDob());
         try {
             PreparedStatement ps = connection.prepareStatement(sql , Statement.RETURN_GENERATED_KEYS);
             ps.setString(1, person.getFirstName());
             ps.setString(2, person.getLastName());
-            ps.setTimestamp(3, Timestamp.valueOf(person.getDob().withZoneSameInstant(ZoneId.of("0")).toLocalDateTime()));
+            ps.setTimestamp(3, Timestamp.valueOf(person.getDob().withZoneSameInstant(ZoneId.of("+0")).toLocalDateTime()));
             int recordAffected = ps.executeUpdate();
-            ResultSet rs = ps.getResultSet();
+            ResultSet rs = ps.getGeneratedKeys();
             while (rs.next()) {
                 long id = rs.getLong(1);
                 person.setId(id);
