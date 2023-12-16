@@ -10,4 +10,8 @@ public class Person {
     public long getId() {
         return 1L;
     }
+
+    public void setId(long id) {
+        this.id = id;
+    }
 }
