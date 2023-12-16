@@ -1,6 +1,7 @@
 package com.abdelslam.peopledb.repository;
 
 import com.abdelslam.peopledb.model.Person;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.sql.Connection;
@@ -12,9 +13,16 @@ import java.time.ZonedDateTime;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class PeopleRepositoryTests {
+
+    private Connection connection;
+
+    @BeforeEach
+    void setUp() throws SQLException {
+        connection = DriverManager.getConnection("/home/abdelslam/Desktop/Courses/Java/people-test");
+    }
+
     @Test
     void canSaveOnePerson() throws SQLException {
-        Connection connection = DriverManager.getConnection("/home/abdelslam/Desktop/Courses/Java/people-test");
         PeopleRepository repo = new PeopleRepository(connection);
         Person john = new Person("john" , "smith" , ZonedDateTime.of(1990,11,15,15,15,15,0, ZoneId.of("-6")));
         Person savedPerson = repo.save(john);
@@ -23,7 +31,7 @@ public class PeopleRepositoryTests {
 
     @Test
     void canSaveTowPeople() {
-        PeopleRepository repo = new PeopleRepository();
+        PeopleRepository repo = new PeopleRepository(connection);
         Person john = new Person("john" , "smith" , ZonedDateTime.of(1990,11,15,15,15,15,0, ZoneId.of("-6")));
         Person bobby = new Person("bobby" , "smith" , ZonedDateTime.of(1992,1,25,15,15,15,0, ZoneId.of("-6")));
         Person savedPerson1 = repo.save(john);
