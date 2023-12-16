@@ -59,7 +59,8 @@ public class StreamsStuff {
 //                .count();
 //                .sum()
 //                .reduce(1500000000,(a , b) -> a< b ? a:b);
-                .reduce((a , b) -> a> b ? a:b);
+//                .reduce((a , b) -> a> b ? a:b);
+                .reduce(Integer::min);
 
 //
         System.out.println(i.orElse(-1));
