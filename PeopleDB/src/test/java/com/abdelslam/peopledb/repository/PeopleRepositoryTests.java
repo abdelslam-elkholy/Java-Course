@@ -1,5 +1,6 @@
 package com.abdelslam.peopledb.repository;
 
+import com.abdelslam.peopledb.model.Person;
 import org.junit.jupiter.api.Test;
 
 import java.time.ZoneId;
