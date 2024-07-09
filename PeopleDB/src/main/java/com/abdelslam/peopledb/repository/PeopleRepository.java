@@ -6,15 +6,16 @@ import java.sql.*;
 import java.time.ZoneId;
 
 public class PeopleRepository {
+    public static final String SQL = "Insert INTO people (FIRST_NAME , LAST_NAME, DOB) VALUES (? ,? ,?)";
     private Connection connection;
     public PeopleRepository(Connection connection) {
         this.connection = connection;
     }
 
     public Person save(Person person) {
-        String sql = String.format("Insert INTO people (FIRST_NAME , LAST_NAME, DOB) VALUES (? ,? ,?)",person.getFirstName() , person.getLastName() , person.getDob());
+  
         try {
-            PreparedStatement ps = connection.prepareStatement(sql , Statement.RETURN_GENERATED_KEYS);
+            PreparedStatement ps = connection.prepareStatement(SQL , Statement.RETURN_GENERATED_KEYS);
             ps.setString(1, person.getFirstName());
             ps.setString(2, person.getLastName());
             ps.setTimestamp(3, Timestamp.valueOf(person.getDob().withZoneSameInstant(ZoneId.of("+0")).toLocalDateTime()));
@@ -23,6 +24,7 @@ public class PeopleRepository {
             while (rs.next()) {
                 long id = rs.getLong(1);
                 person.setId(id);
+                System.out.println(person);
             }
             System.out.printf("Records affected %d%n",recordAffected);
         } catch (SQLException e) {

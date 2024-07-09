@@ -16,10 +16,14 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class PeopleRepositoryTests {
 
     private Connection connection;
+    private PeopleRepository repo;
 
     @BeforeEach
     void setUp() throws SQLException {
         connection = DriverManager.getConnection("jdbc:h2:/home/abdelslam/Desktop/Courses/Java/people-test");
+        connection.setAutoCommit(false);
+
+        repo = new PeopleRepository(connection);
     }
 
     @AfterEach
@@ -33,7 +37,6 @@ public class PeopleRepositoryTests {
 
     @Test
     void canSaveOnePerson() throws SQLException {
-        PeopleRepository repo = new PeopleRepository(connection);
         Person john = new Person("john" , "smith" , ZonedDateTime.of(1990,11,15,15,15,15,0, ZoneId.of("-6")));
         Person savedPerson = repo.save(john);
         assertThat(savedPerson.getId()).isGreaterThan(0);
@@ -41,7 +44,6 @@ public class PeopleRepositoryTests {
 
     @Test
     void canSaveTowPeople() {
-        PeopleRepository repo = new PeopleRepository(connection);
         Person john = new Person("john" , "smith" , ZonedDateTime.of(1990,11,15,15,15,15,0, ZoneId.of("-6")));
         Person bobby = new Person("bobby" , "smith" , ZonedDateTime.of(1992,1,25,15,15,15,0, ZoneId.of("-6")));
         Person savedPerson1 = repo.save(john);

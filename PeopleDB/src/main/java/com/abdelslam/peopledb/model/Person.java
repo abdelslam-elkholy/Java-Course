@@ -35,5 +35,14 @@ public class Person {
         this.id = id;
     }
 
+    @Override
+    public String toString() {
+        return "Person{" +
+                ", id=" + id +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", dob=" + dob +
 
+                '}';
+    }
 }
