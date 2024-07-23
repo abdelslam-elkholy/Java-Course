@@ -24,6 +24,8 @@ public class PeopleRepository {
             int recordAffected = ps.executeUpdate();
             ResultSet rs = ps.getGeneratedKeys();
             while (rs.next()){
+                long id = rs.getLong(1);
+                person.setId(id);
 
             }
             System.out.printf("Records affected: %d%n ", recordAffected);
