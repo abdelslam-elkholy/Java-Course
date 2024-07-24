@@ -5,6 +5,24 @@ public class BankAccount {
     private int balance;
     private String customerName;
     private String email;
+
+    public BankAccount(String customerName, String email, String phoneNumber) {
+
+        this(245,0,customerName , email,phoneNumber);
+    }
+
+    public BankAccount() {
+        this(256,1000,"abdelslam", "email" , "010");
+    }
+
+    public BankAccount(int accountNumber, int balance, String customerName, String email, String phoneNumber) {
+        this.accountNumber = accountNumber;
+        this.balance = balance;
+        this.customerName = customerName;
+        this.email = email;
+        this.phoneNumber = phoneNumber;
+    }
+
     private String phoneNumber;
 
     public String getEmail() {
