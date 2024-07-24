@@ -103,5 +103,20 @@ public class Main {
 //        accTwo.withdrawl(400);
 
 
+        for(int i =1; i<=5; i++){
+            Student s = new Student("s926" + i ,
+                    switch (i) {
+                case 1 -> "Marry";
+                case 2 -> "Carol";
+                case 3 -> "Tim";
+                case 4 -> "Harry";
+                case 5 -> "Lisa";
+                        default ->  "Anonymous";
+                    },
+                    "26/10/1993",
+                    "Java Master class");
+            System.out.println(s);
+        }
+
     }
 }
