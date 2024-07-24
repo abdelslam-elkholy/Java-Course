@@ -74,33 +74,33 @@ public class Main {
 //        }
 //    }
 
-        BankAccount accOne = new BankAccount();
-        BankAccount accTwo = new BankAccount();
-
-        accOne.setBalance(1000);
-        accTwo.setBalance(1500);
-
-        accOne.setEmail("abdelslam.elkholy@gmail.com");
-        accTwo.setEmail("abdelslam.elkholy@gmail.com");
-
-        accOne.setPhoneNumber("01020597823");
-        accTwo.setPhoneNumber("01020597823");
-
-        accOne.setCustomerName("Abdelslam");
-        accTwo.setCustomerName("Abdelslam");
-
-        System.out.println("Hey " + accOne.getCustomerName() + " welcome  to our bank , your credit is " + accOne.getBalance());
-        System.out.println("Hey " + accTwo.getCustomerName() + " welcome  to our bank , your credit is " + accTwo.getBalance());
-
-        accOne.withdrawl(300);
-        accOne.withdrawl(300);
-        accOne.withdrawl(300);
-        accOne.withdrawl(300);
-
-        accTwo.withdrawl(400);
-        accTwo.withdrawl(400);
-        accTwo.withdrawl(400);
-        accTwo.withdrawl(400);
+//        BankAccount accOne = new BankAccount();
+//        BankAccount accTwo = new BankAccount();
+//
+//        accOne.setBalance(1000);
+//        accTwo.setBalance(1500);
+//
+//        accOne.setEmail("abdelslam.elkholy@gmail.com");
+//        accTwo.setEmail("abdelslam.elkholy@gmail.com");
+//
+//        accOne.setPhoneNumber("01020597823");
+//        accTwo.setPhoneNumber("01020597823");
+//
+//        accOne.setCustomerName("Abdelslam");
+//        accTwo.setCustomerName("Abdelslam");
+//
+//        System.out.println("Hey " + accOne.getCustomerName() + " welcome  to our bank , your credit is " + accOne.getBalance());
+//        System.out.println("Hey " + accTwo.getCustomerName() + " welcome  to our bank , your credit is " + accTwo.getBalance());
+//
+//        accOne.withdrawl(300);
+//        accOne.withdrawl(300);
+//        accOne.withdrawl(300);
+//        accOne.withdrawl(300);
+//
+//        accTwo.withdrawl(400);
+//        accTwo.withdrawl(400);
+//        accTwo.withdrawl(400);
+//        accTwo.withdrawl(400);
 
 
     }
