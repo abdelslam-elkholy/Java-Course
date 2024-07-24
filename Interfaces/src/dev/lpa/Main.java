@@ -104,7 +104,7 @@ public class Main {
 
 
         for(int i =1; i<=5; i++){
-            Student s = new Student("s926" + i ,
+            LpaStudent s = new LpaStudent("s926" + i ,
                     switch (i) {
                 case 1 -> "Marry";
                 case 2 -> "Carol";
@@ -117,6 +117,15 @@ public class Main {
                     "Java Master class");
             System.out.println(s);
         }
+Student pojoStudent = new Student("s9264" , "Abdelslam" , "26/10/1993" ,"Lpa Java Class");
+LpaStudent recordStudent = new LpaStudent("s9264" , "Abdelslam" , "26/10/1993" ,"Lpa Java Class");
+
+        System.out.println(pojoStudent);
+        System.out.println(recordStudent);
+
+
+        System.out.println(pojoStudent.getName() + " is taking " + pojoStudent.getClassList());
+        System.out.println(recordStudent.name() + " is taking " + recordStudent.classList());
 
     }
 }
