@@ -2,10 +2,11 @@ public class Empolyee extends Worker{
     private String hireDate;
     private long employeeId;
 
-    public Empolyee(String name, String dob, String hireDate, long employeeId) {
+    private static int empId = 1;
+    public Empolyee(String name, String dob, String hireDate) {
         super(name, dob);
         this.hireDate = hireDate;
-        this.employeeId = employeeId;
+        this.employeeId = Empolyee.empId++;
     }
 
     @Override
