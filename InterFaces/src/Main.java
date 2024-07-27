@@ -19,15 +19,38 @@ public class Main {
 //        System.out.println(emp.collectPay());
 //
 //        System.out.println(  new Empolyee("Abdelslam" , "26/10/1993","22/12/2023"));
+//
+//        System.out.println("""
+//                This is first Line
+//                  - first ele
+//                    *sub ele""");
+//int age = 31;
+//String name = "abdelslam";
+//        System.out.printf("This Is %d and %d years old" , 20 , age);
 
-        System.out.println("""
-                This is first Line 
-                  - first ele
-                    *sub ele""");
-int age = 31;
-String name = "abdelslam";
-        System.out.printf("This Is %d and %d years old" , 20 , age);
+    stringInFormat("Hello World");
+    stringInFormat("");
+    stringInFormat("\n \t");
+
+    String myString = "Hello World";
+        System.out.printf("index of \"r\" is: %d%n" , myString.indexOf('r'));
+        System.out.printf("index of \"World\" is: %d%n" , myString.indexOf("World"));
+        System.out.printf("Last index of \"L\" is: %d%n" , myString.lastIndexOf("l"));
+
     }
 
-
+public static void stringInFormat(String string){
+        int length = string.length();
+        if (string.isEmpty())
+        {
+            System.out.printf("String is Empty %n");
+            return;
+        }
+        if (string.isBlank()){
+            System.out.printf("String is blank");
+        }
+    System.out.printf("Length is:- %d %n", length);
+    System.out.printf("First Char is:- %c %n", string.charAt(0));
+    System.out.printf("Last Char is:- %c %n", string.charAt(length-1));
+}
 }
