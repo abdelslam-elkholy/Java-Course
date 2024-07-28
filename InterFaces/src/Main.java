@@ -37,9 +37,15 @@ public class Main {
         System.out.printf("index of \"World\" is: %d%n" , myString.indexOf("World"));
         System.out.printf("Last index of \"L\" is: %d%n" , myString.lastIndexOf("l"));
 
+        printInformation("Hello World");
+        printInformation(new StringBuilder("Hello World"));
     }
 public static void printInformation(String string){
-    System.out.println();
+    System.out.println("String is = " + string);
+    System.out.println("Length is = " + string.length());
+}public static void printInformation(StringBuilder string){
+    System.out.println("StringBuilder is = " + string);
+    System.out.println("Length is = " + string.length());
 }
 public static void stringInFormat(String string){
         int length = string.length();
