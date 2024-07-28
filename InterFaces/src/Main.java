@@ -39,10 +39,11 @@ public class Main {
         String str = "Hello World";
         StringBuilder strBldr = new StringBuilder("Hello World");
 
+
         str.concat(" ,Bye for now!");
         strBldr.append(" ,Bye for now!");
-        printInformation();
-        printInformation(new StringBuilder("Hello World"));
+        printInformation(str);
+        printInformation(strBldr);
     }
 public static void printInformation(String string){
     System.out.println("String is = " + string);
@@ -50,6 +51,7 @@ public static void printInformation(String string){
 }public static void printInformation(StringBuilder string){
     System.out.println("StringBuilder is = " + string);
     System.out.println("Length is = " + string.length());
+    System.out.println("Capacity is = " + string.capacity());
 }
 public static void stringInFormat(String string){
         int length = string.length();
