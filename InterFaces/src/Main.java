@@ -38,7 +38,9 @@ public class Main {
         System.out.printf("Last index of \"L\" is: %d%n" , myString.lastIndexOf("l"));
 
     }
-
+public static void printInformation(String string){
+    System.out.println();
+}
 public static void stringInFormat(String string){
         int length = string.length();
         if (string.isEmpty())
