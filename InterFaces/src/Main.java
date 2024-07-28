@@ -36,8 +36,12 @@ public class Main {
         System.out.printf("index of \"r\" is: %d%n" , myString.indexOf('r'));
         System.out.printf("index of \"World\" is: %d%n" , myString.indexOf("World"));
         System.out.printf("Last index of \"L\" is: %d%n" , myString.lastIndexOf("l"));
+        String str = "Hello World";
+        StringBuilder strBldr = new StringBuilder("Hello World");
 
-        printInformation("Hello World");
+        str.concat(" ,Bye for now!");
+        strBldr.append(" ,Bye for now!");
+        printInformation();
         printInformation(new StringBuilder("Hello World"));
     }
 public static void printInformation(String string){
