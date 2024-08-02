@@ -44,6 +44,14 @@ public class Main {
         strBldr.append(" ,Bye for now!");
         printInformation(str);
         printInformation(strBldr);
+
+        ComputerCase theCase = new ComputerCase("2208" , "Dell" , "240");
+        Monitor theMonitor = new Monitor("27inch Beast" , "Acer" , 27 , "2540 x 1440");
+        MotherBoard motherBoard = new MotherBoard("Bj-200" , "Asus" , 4 , 6 , "V2.44");
+
+        PersonalComputer thePc = new PersonalComputer("2208" , "Dell" ,motherBoard , theMonitor , theCase);
+
+
     }
 public static void printInformation(String string){
     System.out.println("String is = " + string);

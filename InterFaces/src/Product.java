@@ -13,8 +13,23 @@ public class Product {
 }
 
 class Monitor extends Product {
+    private int size;
+    private String resolution;
+
     public Monitor(String model, String manufactuerer) {
         super(model, manufactuerer);
+    }
+
+    public Monitor(String model, String manufactuerer, int size, String resolution) {
+        super(model, manufactuerer);
+        this.size = size;
+        this.resolution = resolution;
+    }
+
+    public void drawPixelAt(int x , int y , String color) {
+        System.out.println(String.format(
+                "Drawing pixel At %d,%d in color %s" , x ,y , color
+        ));
     }
 }
 
@@ -36,12 +51,24 @@ class MotherBoard extends Product {
     }
 
     public void loadProgram(String programName) {
-        System.out.printf("Program %d is now loading...\n" , programName);
+        System.out.printf("Program %s is now loading...\n" , programName);
     }
 }
 
 class ComputerCase extends Product {
+    private String powerSupllier;
+
     public ComputerCase(String model, String manufactuerer) {
         super(model, manufactuerer);
     }
+
+    public ComputerCase(String model, String manufactuerer, String powerSupllier) {
+        super(model, manufactuerer);
+        this.powerSupllier = powerSupllier;
+    }
+
+    public void pressPowerButton() {
+        System.out.println("Power button pressed");
+    }
+
 }
