@@ -51,9 +51,7 @@ public class Main {
 
         PersonalComputer thePc = new PersonalComputer("2208" , "Dell" ,motherBoard , theMonitor , theCase);
 
-        thePc.getMonitor().drawPixelAt(10 , 10 , "red");
-        thePc.getMotherBoard().loadProgram("Linux Os");
-        thePc.getComputerCase().pressPowerButton();
+       thePc.powerUp();
 
 
     }
