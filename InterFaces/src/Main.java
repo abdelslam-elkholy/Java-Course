@@ -53,6 +53,17 @@ public class Main {
 
        thePc.powerUp();
 
+       SmartKitchen smartKitchen = new SmartKitchen();
+       smartKitchen.doKitchenWork();
+
+       smartKitchen.addWater();
+       smartKitchen.pourMilk();
+       smartKitchen.loadDishWasher();
+
+       smartKitchen.doKitchenWork();
+
+       smartKitchen.setState(true , true , false);
+       smartKitchen.doKitchenWork();
 
     }
 public static void printInformation(String string){
