@@ -65,6 +65,14 @@ public class Main {
        smartKitchen.setState(true , true , false);
        smartKitchen.doKitchenWork();
 
+
+       Printer printer = new Printer(100 , true);
+       printer.addToner(5);
+
+       printer.printPages(35);
+        System.out.println( printer.getPagesPrinted());
+
+
     }
 public static void printInformation(String string){
     System.out.println("String is = " + string);

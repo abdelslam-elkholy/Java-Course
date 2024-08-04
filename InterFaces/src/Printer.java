@@ -22,7 +22,12 @@ public class Printer {
           sheets =   sheets % 2 == 0 ? sheets / 2 :  (sheets + 1) / 2;
             System.out.println("The Printer is duplex");
         }
+        pagesPrinted+=sheets;
         return sheets;
+    }
+
+    public int getPagesPrinted() {
+        return pagesPrinted;
     }
 }
 
