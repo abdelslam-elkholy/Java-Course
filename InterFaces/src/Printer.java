@@ -19,7 +19,7 @@ public class Printer {
 
         int sheets = pages;
         if (duplex) {
-          sheets =   sheets / 2  + sheets % 2;
+//          sheets =   sheets / 2  + sheets % 2;
             System.out.println("The Printer is duplex");
         }
         pagesPrinted+=sheets;
