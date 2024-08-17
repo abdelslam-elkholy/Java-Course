@@ -19,7 +19,7 @@ class Adventure extends Movie {
     @Override
     public void watchMovie() {
         super.watchMovie();
-        System.out.printf("...%s%n".repeat(3) ,
+//        System.out.printf("...%s%n".repeat(3) ,
                 "pleasant Scene" ,
                 "Scary Music" ,
                 "Something scary happend" );
